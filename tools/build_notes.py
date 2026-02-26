@@ -8,6 +8,7 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+from datetime import datetime, date
 
 import yaml
 
@@ -65,6 +66,17 @@ def infer_topic_course(tex_path: Path) -> Tuple[str, str]:
         die(f"Expected notes_staging/<topic>/<course>/<file>.tex but got: {tex_path}")
     return parts[0], parts[1]
 
+def parse_note_date(d: Optional[str]) -> date:
+    """
+    Parse YYYY-MM-DD into a date. If missing/invalid, return minimal date so it sorts last.
+    """
+    if not d:
+        return date.min
+    try:
+        return datetime.strptime(d.strip(), "%Y-%m-%d").date()
+    except Exception:
+        return date.min
+    
 def require_pandoc() -> None:
     try:
         subprocess.run(["pandoc", "--version"], check=True, capture_output=True, text=True)
@@ -148,10 +160,12 @@ def generate_quarto_yml(notes: List[Note]) -> None:
 
     for topic in tree:
         for course in tree[topic]:
-            # newest first if date present, else by title
-            tree[topic][course].sort(key=lambda x: (x.date or "", x.title.lower()), reverse=True)
+            tree[topic][course].sort(
+                key=lambda x: (parse_note_date(x.date), x.title.lower()),
+                reverse=False
+            )
 
-    sidebar_contents = [{"text": "Home", "href": "index.qmd"}]
+        sidebar_contents = [{"text": "Home", "href": "index.qmd"}]
 
     for topic in sorted(tree.keys()):
         topic_section = {"section": topic.replace("_", " "), "contents": []}
@@ -186,8 +200,11 @@ def generate_quarto_yml(notes: List[Note]) -> None:
     )
 
 def write_homepage(notes: List[Note]) -> None:
-    notes_sorted = sorted(notes, key=lambda n: (n.date or "", n.title.lower()), reverse=True)
-
+    notes_sorted = sorted(
+        notes,
+        key=lambda n: (parse_note_date(n.date), n.title.lower()),
+        reverse=True
+    )
     lines = []
     lines.append("---")
     lines.append("title: Home")
@@ -206,6 +223,20 @@ def write_homepage(notes: List[Note]) -> None:
 
     (REPO_ROOT / "index.qmd").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
+def copy_note_assets(note: Note) -> None:
+    """
+    Copies any assets folder next to the .tex file into the corresponding
+    generated notes/ topic/course/ directory so Quarto can find them.
+    Convention: assets live in a sibling folder named 'images' or 'assets'.
+    """
+    for folder_name in ("images", "assets"):
+        src_dir = note.src.parent / folder_name
+        if src_dir.exists() and src_dir.is_dir():
+            dst_dir = note.out.parent / folder_name
+            if dst_dir.exists():
+                shutil.rmtree(dst_dir)
+            shutil.copytree(src_dir, dst_dir)
+            
 def main() -> None:
     require_pandoc()
     tex_files = find_tex_files()
@@ -217,6 +248,7 @@ def main() -> None:
 
     for n in notes:
         tex_to_qmd(n)
+        copy_note_assets(n)
 
     write_homepage(notes)
     generate_quarto_yml(notes)

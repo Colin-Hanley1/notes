@@ -1,0 +1,23 @@
+% title: note 1
+% date: 2026-01-07
+
+\section*{Definition}
+A stochastic process is a collection of random variables indexed by time. When the index is discrete, we say that it is a \textbf{discrete-time} stochastic process. When the index is continuous, we say that it is a \textbf{continuous-time} stochastic process.
+
+A discrete-time stochastic process: $X_0, X_1, \dots, X_n$
+
+A continuous-time stochastic process: $X_t$ for $t \geq 0$
+
+\section*{Example}
+Bernoulli Process, where we use $X_1, X_2, \dots$ to denote the outcomes of coin flips, these events are i.i.d
+\[
+ X_i = \begin{cases} 1, i^{th} \ flip \ is  \ heads\\ 0, i^{th} \  flip \  is \  tails \end{cases}   
+\]
+
+\section*{Example}
+Gambler's Ruin, consider a gambling game in which, on a turn, you win 1 dollar with probability p and lose 1 dollar with probability 1-p. You quit when you reach 0 or 100 dollars
+
+$Y_n$ is the accumulated fortune after the $n^{th}$ play. Then $Y_1, Y_2, Y_3, \dots$ is a discrete-time stochastic process.
+
+\section*{Definition}
+A stochastic process is Markovian if the future states only depend on the present state

@@ -16,6 +16,8 @@ website:
           href: notes/math/MATH_451/epsilon-delta-continuity.qmd
       - section: MATH 457
         contents:
+        - text: note 1
+          href: notes/math/MATH_457/note-1.qmd
         - text: Epsilon-Delta Continuity
           href: notes/math/MATH_457/epsilon-delta-continuity.qmd
   page-navigation: true
