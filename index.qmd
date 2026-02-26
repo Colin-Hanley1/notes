@@ -11,4 +11,5 @@ Browse using the sidebar (Topic → Class → Note).
 
 ## Recent notes
 
+- [Epsilon-Delta Continuity](notes/math/MATH_457/epsilon-delta-continuity.qmd) — 2026-02-26
 - [Epsilon-Delta Continuity](notes/math/MATH_451/epsilon-delta-continuity.qmd) — 2026-02-26

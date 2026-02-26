@@ -5,3 +5,6 @@ __pycache__/
 # Quarto output
 _site/
 .quarto/
+
+/.quarto/
+**/*.quarto_ipynb
