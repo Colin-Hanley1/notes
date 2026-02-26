@@ -1,0 +1,46 @@
+% title: Method of Moments
+% date: 2026-01-09
+
+\section*{Experiment Design to Get Samples}
+Take, for instance, an example of sampling red and black balls from an urn, the ratio between the two colors is unknown
+\begin{itemize}
+    \item When sampling w/ replacement, the samples are independent
+    \item When sampling w/o replacement, the samples are dependent
+\end{itemize}
+We choose, unless otherwise specified, a statistical model consisting of making i.i.d assumptions of the samples $Y_i = 1,2,\dots,n$, where n is the sample size
+\begin{enumerate}
+    \item The population is charactertized by a random variable Y
+    \item We sample n observations from the distribution of Y, and the result is a collection of RV s.t.
+        \begin{enumerate}
+            \item Each sample has the same distribution of Y
+            \item $Y_1, \dots, Y_n$ are independent
+        \end{enumerate}
+\end{enumerate}
+
+\section*{Build Inferences from the Random Samples}
+\mathbf{Parametric inference}: Build statistics to make inferences
+
+\mathbf{Statistic}: A function of the observable variables in a sample and known constants
+
+$\theta$ is the target variable
+\begin{enumerate}
+    \item Point Estimation: $\hat{\theta}$
+    \item Interval Estimation: $[\hat{\theta_1}, \hat{\theta_2}]$
+    \item Hypothesis Testing: Rejection Region
+\end{enumerate}
+
+\section*{Method of Moments}
+\begin{itemize}
+    \item $k^{th}$ moment of $Y=\mu_k^{'} = E[Y^k]$
+    \item $k^{th}$ moment of the random sample: $m_k^{'} = \frac{1}{n}\sum_{i=1}^{n}Y_i^k$
+\end{itemize}
+Choose as estimates those values of the parameters that are solutions to the equations $\mu_k^' = m_k^'$ for $k=1,2,\dots,t$ where t is the number of target parameters
+
+\section*{Example}
+A random sample of n observations $Y_1, \dots, Y_n$ is selected from a population Y w/ a uniform distribution over the interval $[0, \theta]$. Find the MOM estimator of $\theta$
+
+$\mu_1^{'} = E[Y] = \frac{0+\theta}{2} = \frac{\theta}{2}$
+
+$m_1^{'}$ = Sample Mean = $\bar{Y}$
+
+$\mu_1^{'} = m_1^{'} = \frac{\theta}{2} = \bar{Y} = \theta = 2\bar{Y} = \hat{\theta}$

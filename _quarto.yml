@@ -10,16 +10,20 @@ website:
       href: index.qmd
     - section: math
       contents:
-      - section: MATH 451
+      - section: Complex Variables
         contents:
-        - text: Epsilon-Delta Continuity
-          href: notes/math/MATH_451/epsilon-delta-continuity.qmd
-      - section: MATH 457
+        - text: Introduction
+          href: notes/math/Complex_Variables/introduction.qmd
+      - section: Math Stats w Applications I
         contents:
-        - text: note 1
-          href: notes/math/MATH_457/note-1.qmd
-        - text: Epsilon-Delta Continuity
-          href: notes/math/MATH_457/epsilon-delta-continuity.qmd
+        - text: Introduction
+          href: notes/math/Math_Stats_w_Applications_I/introduction.qmd
+        - text: Method of Moments
+          href: notes/math/Math_Stats_w_Applications_I/method-of-moments.qmd
+      - section: Stochastic Processes
+        contents:
+        - text: Introduction
+          href: notes/math/Stochastic_Processes/introduction.qmd
   page-navigation: true
 format:
   html:

@@ -11,6 +11,7 @@ Browse using the sidebar (Topic → Class → Note).
 
 ## Recent notes
 
-- [Epsilon-Delta Continuity](notes/math/MATH_457/epsilon-delta-continuity.qmd) — 2026-02-26
-- [Epsilon-Delta Continuity](notes/math/MATH_451/epsilon-delta-continuity.qmd) — 2026-02-26
-- [note 1](notes/math/MATH_457/note-1.qmd) — 2026-01-07
+- [Method of Moments](notes/math/Math_Stats_w_Applications_I/method-of-moments.qmd) — 2026-01-09
+- [Introduction](notes/math/Complex_Variables/introduction.qmd) — 2026-01-08
+- [Introduction](notes/math/Math_Stats_w_Applications_I/introduction.qmd) — 2026-01-07
+- [Introduction](notes/math/Stochastic_Processes/introduction.qmd) — 2026-01-07

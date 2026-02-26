@@ -1,0 +1,32 @@
+---
+title: Introduction
+date: '2026-01-07'
+tags: []
+format:
+  html:
+    html-math-method: katex
+---
+
+# Definition {#definition .unnumbered}
+
+Statistics is the liason of probability and real-life situations. A statistician will jump between probability methdos and reality with randomness and uncertainty
+
+More specifically, the objective of statistics is to make inferences about a population based on information contained in a sample and provide an associated measure of goodness of the inferences
+
+# Population {#population .unnumbered}
+
+The lrge body of data that we are investigating
+
+# Sample {#sample .unnumbered}
+
+The subset collected from the population
+
+# Parameter Inferences {#parameter-inferences .unnumbered}
+
+To make an inference of hte value of one or more of the relevant parameters, when the population is characterized by numerical descriptive statistics called parameters
+
+1.  Experiment design to draw the sample
+
+2.  Calculate our inference based on the data generated from the sample
+
+3.  Evaluate the quality of our inference

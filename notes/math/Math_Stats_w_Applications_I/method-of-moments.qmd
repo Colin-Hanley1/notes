@@ -1,0 +1,58 @@
+---
+title: Method of Moments
+date: '2026-01-09'
+tags: []
+format:
+  html:
+    html-math-method: katex
+---
+
+# Experiment Design to Get Samples {#experiment-design-to-get-samples .unnumbered}
+
+Take, for instance, an example of sampling red and black balls from an urn, the ratio between the two colors is unknown
+
+- When sampling w/ replacement, the samples are independent
+
+- When sampling w/o replacement, the samples are dependent
+
+We choose, unless otherwise specified, a statistical model consisting of making i.i.d assumptions of the samples $Y_i = 1,2,\dots,n$, where n is the sample size
+
+1.  The population is charactertized by a random variable Y
+
+2.  We sample n observations from the distribution of Y, and the result is a collection of RV s.t.
+
+    1.  Each sample has the same distribution of Y
+
+    2.  $Y_1, \dots, Y_n$ are independent
+
+# Build Inferences from the Random Samples {#build-inferences-from-the-random-samples .unnumbered}
+
+: Build statistics to make inferences
+
+: A function of the observable variables in a sample and known constants
+
+$\theta$ is the target variable
+
+1.  Point Estimation: $\hat{\theta}$
+
+2.  Interval Estimation: $[\hat{\theta_1}, \hat{\theta_2}]$
+
+3.  Hypothesis Testing: Rejection Region
+
+# Method of Moments {#method-of-moments .unnumbered}
+
+- $k^{th}$ moment of $Y=\mu_k^{'} = E[Y^k]$
+
+- $k^{th}$ moment of the random sample: $m_k^{'} = \frac{1}{n}\sum_{i=1}^{n}Y_i^k$
+
+Choose as estimates those values of the parameters that are solutions to the equations $\mu_k^' = m_k^'$ for $k=1,2,\dots,t$ where t is the number of target parameters
+
+# Example {#example .unnumbered}
+
+A random sample of n observations $Y_1, \dots, Y_n$ is selected from a population Y w/ a uniform distribution over the interval $[0, \theta]$. Find the MOM estimator of $\theta$
+
+$\mu_1^{'} = E[Y] = \frac{0+\theta}{2} = \frac{\theta}{2}$
+
+$m_1^{'}$ = Sample Mean = $\bar{Y}$
+
+$\mu_1^{'} = m_1^{'} = \frac{\theta}{2} = \bar{Y} = \theta = 2\bar{Y} = \hat{\theta}$
