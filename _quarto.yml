@@ -1,0 +1,23 @@
+project:
+  type: website
+website:
+  title: Personal Notes
+  sidebar:
+    style: docked
+    search: true
+    contents:
+    - text: Home
+      href: index.qmd
+    - section: math
+      contents:
+      - section: MATH 451
+        contents:
+        - text: Epsilon-Delta Continuity
+          href: notes/math/MATH_451/epsilon-delta-continuity.qmd
+  page-navigation: true
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    html-math-method: katex

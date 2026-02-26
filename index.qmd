@@ -1,0 +1,14 @@
+---
+title: Home
+format:
+  html:
+    toc: false
+---
+
+# Personal Notes
+
+Browse using the sidebar (Topic → Class → Note).
+
+## Recent notes
+
+- [Epsilon-Delta Continuity](notes/math/MATH_451/epsilon-delta-continuity.qmd) — 2026-02-26
